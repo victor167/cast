@@ -31,18 +31,12 @@ var app = {
         //this.receivedEvent('deviceready');
         alert("cargando...");
 
-        window.echo = function(str, callback) {
-            cordova.exec(callback, function(err) {
-                callback('Nothing to echo.');
-            }, "Chromecast", "echo", [str]);
-        };
-
-        window.listDevices = function(callback) {
-          cordova.exec(callback, function(err) { callback('Cannot enumerate devices'); }, "Chromecast", "listDevices", []);
-        }
+        app.setupDiscovery();
 
     },
-
+    setupDiscovery: function () {
+        ConnectSDK.discoveryManager.startDiscovery();
+    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
