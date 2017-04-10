@@ -46,7 +46,9 @@ var app = {
 };
 
 app.initialize();*/
-
+window.onerror = function(error, url, line) {
+    alert(error);
+};
 
 exports.init = function() {
   eval(require('org.apache.cordova.test-framework.test').injectJasmineInterface(this, 'this'));
@@ -57,6 +59,7 @@ exports.init = function() {
   var applicationID = 'CC1AD845';
   var videoUrl = 'http://s3.nwgat.net/flvplayers3/bbb.mp4';
 
+  alert("nada?");
 
   describe('chrome.cast', function() {
 
