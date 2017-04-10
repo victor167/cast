@@ -35,8 +35,11 @@ var app = {
 
     },
     setupDiscovery: function () {
-        ConnectSDK.discoveryManager.startDiscovery();
+      ConnectSDK.discoveryManager.startDiscovery();
     },
+    showDevicePicker: function () {
+      ConnectSDK.discoveryManager.pickDevice();
+    }
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
